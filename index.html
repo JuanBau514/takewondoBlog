@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Anti-flash: apply theme before React renders -->
+    <script>
+      (function () {
+        var STORAGE_KEY = 'taoteking-theme';
+        var stored = localStorage.getItem(STORAGE_KEY);
+        var theme;
+        if (stored === 'dark') {
+          theme = 'dark';
+        } else if (stored === 'light') {
+          theme = 'light';
+        } else {
+          // auto: use time of day (6am-6pm = light, else dark)
+          var hour = new Date().getHours();
+          theme = hour >= 6 && hour < 18 ? 'light' : 'dark';
+        }
+        if (theme === 'dark') document.documentElement.classList.add('dark');
+      })();
+    </script>
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Club de Taekwondo TaoTeKing - Forjando campeones, construyendo carácter. Clases para todas las edades en Colombia." />
+    <meta name="theme-color" content="#c80a0a" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <title>TaoTeKing | Club de Taekwondo</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
