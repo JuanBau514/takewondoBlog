@@ -70,7 +70,9 @@ const colorMap = {
     bg: 'bg-yellow-50 dark:bg-yellow-950/20',
     hoverBg: 'hover:bg-yellow-100 dark:hover:bg-yellow-950/40',
   },
-};
+} as const;
+
+type ColorKey = keyof typeof colorMap;
 
 export default function BeneficiosSection() {
   return (
@@ -86,7 +88,7 @@ export default function BeneficiosSection() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {benefits.map(({ icon: Icon, title, description, color, category }) => {
-            const colors = colorMap[color];
+            const colors = colorMap[color as ColorKey];
             return (
               <div key={title} className={`card p-6 border-2 ${colors.border} ${colors.bg} ${colors.hoverBg} transition-all duration-300 hover:shadow-lg`}>
                 <div className="flex items-center gap-3 mb-4">

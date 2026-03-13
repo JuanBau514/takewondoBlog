@@ -56,13 +56,13 @@ export default function HeroSection() {
           <span className="text-korean-red text-sm font-medium">Inscripciones abiertas 2026</span>
         </div> */}
 
-        {/* Title - Texto oscuro con énfasis en rojo coreano */}
-        <h1 className="font-display text-5xl sm:text-7xl lg:text-8xl font-bold text-gray-900 mb-6 leading-none">
+        {/* Title - Gradiente azul > negro/blanco > rojo coreano */}
+        <h1 className="font-display text-5xl sm:text-7xl lg:text-8xl font-bold mb-6 leading-none hero-gradient-title">
           <span className="block">SEMILLERO DE</span>
-          <span className="block" style={{ color: '#DA1F50' }}>CAMPEONES</span>
+          <span className="block">CAMPEONES</span>
         </h1>
 
-        <p className="text-gray-600 text-lg sm:text-xl max-w-2xl mx-auto mb-10 font-light leading-relaxed">
+        <p className="text-gray-600 dark:text-gray-200 text-lg sm:text-xl max-w-2xl mx-auto mb-10 font-light leading-relaxed">
           En Club TaoTeKing no solo enseñamos Taekwondo — cultivamos disciplina, respeto y el carácter de verdaderos líderes. Únete a nuestra familia.
         </p>
 
@@ -84,9 +84,9 @@ export default function HeroSection() {
                   size={20} 
                   className={index === 0 ? 'text-korean-red' : index === 1 ? 'text-korean-blue' : 'text-korean-green'} 
                 />
-                <span className="font-display text-3xl font-bold text-gray-900">{value}</span>
+                <span className="font-display text-3xl font-bold text-gray-900 dark:text-white">{value}</span>
               </div>
-              <span className="text-gray-500 text-sm">{label}</span>
+              <span className="text-gray-500 dark:text-gray-400 text-sm">{label}</span>
             </div>
           ))}
         </div>
